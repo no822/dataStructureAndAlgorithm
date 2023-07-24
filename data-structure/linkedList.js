@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 console.log('init');
 class MyNodeImpl {
     constructor(value, next = null) {
@@ -85,6 +86,7 @@ class LinkedListImpl {
         return currentNode;
     }
 }
+exports.default = LinkedListImpl;
 const linkedList = new LinkedListImpl();
 console.log('---insertAt---');
 linkedList.insertAt(0, 1);

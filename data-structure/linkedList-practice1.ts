@@ -1,5 +1,4 @@
-{
-    interface MyNode<T> {
+    export interface MyNode<T> {
         data: T | null;
         next: MyNode<T> | null;
     }
@@ -14,7 +13,8 @@
         }
     }
 
-    interface MyLinkedList<T> {
+    export interface MyLinkedList<T> {
+        count: number;
         clear(): void;
         printAll(): void;
         insertAt(index: number, data: T): void;
@@ -24,7 +24,7 @@
         getNodeAt(index: number): MyNode<T>;
     }
 
-    class MyLinkedListImpl<T> implements MyLinkedList<T> {
+    export default class MyLinkedListImpl<T> implements MyLinkedList<T> {
         head: MyNode<T> | null = null;
         count: number = 0;
 
@@ -115,48 +115,47 @@
 
 
 
-const linkedList = new MyLinkedListImpl();
-
-console.log('---insertAt---')
-linkedList.insertAt(0, 1);
-linkedList.insertAt(1, 2);
-linkedList.insertAt(2, 3);
-linkedList.insertAt(2, 4);
-linkedList.printAll(); // [1, 2, 4, 3]
-
-console.log('---clear---')
-linkedList.clear();
-linkedList.printAll(); // []
+//     const linkedList = new MyLinkedListImpl();
 //
-console.log('---insertLast---')
-linkedList.insertLast(1);
-linkedList.insertLast(2);
-linkedList.insertLast(3);
-linkedList.printAll(); // [1, 2, 3]
+//     console.log('---insertAt---')
+//     linkedList.insertAt(0, 1);
+//     linkedList.insertAt(1, 2);
+//     linkedList.insertAt(2, 3);
+//     linkedList.insertAt(2, 4);
+//     linkedList.printAll(); // [1, 2, 4, 3]
 //
-console.log('---deleteAt---')
-linkedList.deleteAt(0);
-linkedList.deleteAt(1);
-linkedList.printAll(); // [2]
-
-console.log('---deleteLast---')
-linkedList.clear();
-linkedList.insertLast(4);
-linkedList.insertLast(3);
-linkedList.insertLast(2);
-linkedList.insertLast(1);
-linkedList.deleteLast();
-linkedList.deleteLast();
-linkedList.deleteLast();
-linkedList.printAll(); // [4]
+//     console.log('---clear---')
+//     linkedList.clear();
+//     linkedList.printAll(); // []
+// //
+//     console.log('---insertLast---')
+//     linkedList.insertLast(1);
+//     linkedList.insertLast(2);
+//     linkedList.insertLast(3);
+//     linkedList.printAll(); // [1, 2, 3]
+// //
+//     console.log('---deleteAt---')
+//     linkedList.deleteAt(0);
+//     linkedList.deleteAt(1);
+//     linkedList.printAll(); // [2]
 //
-console.log('---getNodeAt---')
-linkedList.clear();
-linkedList.insertLast(4);
-linkedList.insertLast(3);
-linkedList.insertLast(2);
-linkedList.insertLast(1);
-console.log(linkedList.getNodeAt(3)); // MyNodeImpl {value: 1, next: null}
-console.log(linkedList.getNodeAt(2)); // MyNodeImpl {value: 2, next: MyNodeImpl}
-
-}
+//     console.log('---deleteLast---')
+//     linkedList.clear();
+//     linkedList.insertLast(4);
+//     linkedList.insertLast(3);
+//     linkedList.insertLast(2);
+//     linkedList.insertLast(1);
+//     linkedList.deleteLast();
+//     linkedList.deleteLast();
+//     linkedList.deleteLast();
+//     linkedList.printAll(); // [4]
+// //
+//     console.log('---getNodeAt---')
+//     linkedList.clear();
+//     linkedList.insertLast(4);
+//     linkedList.insertLast(3);
+//     linkedList.insertLast(2);
+//     linkedList.insertLast(1);
+//     console.log(linkedList.getNodeAt(3)); // MyNodeImpl {value: 1, next: null}
+//     console.log(linkedList.getNodeAt(2)); // MyNodeImpl {value: 2, next: MyNodeImpl}
+//

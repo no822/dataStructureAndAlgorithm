@@ -5,7 +5,7 @@ interface MyNode<T> {
     next: MyNode<T> | null;
 }
 
-class MyNodeImpl<T> implements MyNode<T> {
+ class MyNodeImpl<T> implements MyNode<T> {
     value: T;
     next: MyNode<T> | null;
     constructor(value: T, next: MyNode<T> | null = null) {
@@ -24,7 +24,7 @@ interface LinkedList<T> {
     getNodeAt(index: number): MyNode<T>;
 }
 
-class LinkedListImpl<T> implements LinkedList<T>{
+export default class LinkedListImpl<T> implements LinkedList<T>{
     private head: MyNode<T> | null = null;
     private count: number = 0;
 
