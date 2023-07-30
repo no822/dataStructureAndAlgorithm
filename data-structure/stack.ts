@@ -52,10 +52,11 @@ stack.pop();
 stack.print(); // [4]
 
 console.log('----peak----');
+stack.pop();
 stack.push(3);
 stack.push(2);
 stack.push(1);
-console.log(`peak: ${stack.peak().data}`); // 3;
+console.log(`peak: ${stack.peak().data}`); // peak: 3;
 stack.print(); // [3, 2, 1]
 
 console.log('----result----');

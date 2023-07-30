@@ -58,7 +58,8 @@
                 newNode.next = this.head;
                 this.head = newNode;
             } else {
-                let currentNode = this.head as MyNode<T>;
+                let currentNode = this.head as MyNode<T>
+                ;
                 for (let i=0; i<index-1; i++) {
                     currentNode = currentNode.next as MyNode<T>;
                 }
